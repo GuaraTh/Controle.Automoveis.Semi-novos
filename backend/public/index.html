@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Automóveis Semi-novos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        input {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        #message {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sistema de Controle de Automóveis Semi-novos</h1>
+        <div id="app">
+            <div id="login-section">
+                <h2>Login</h2>
+                <form class="login-form" id="login-form">
+                    <input type="email" id="email" placeholder="Email" required>
+                    <input type="password" id="password" placeholder="Senha" required>
+                    <button type="submit">Entrar</button>
+                </form>
+            </div>
+            <div id="dashboard" style="display: none;">
+                <h2>Dashboard</h2>
+                <p>Bem-vindo ao sistema!</p>
+                <nav>
+                    <button id="show-vehicles">Gerenciar Veículos</button>
+                    <button id="logout-btn">Sair</button>
+                </nav>
+                <div id="vehicles-section" style="display: none;">
+                    <h3>Veículos</h3>
+                    <button id="add-vehicle-btn">Adicionar Veículo</button>
+                    <ul id="vehicles-list"></ul>
+                </div>
+                <div id="vehicle-form" style="display: none;">
+                    <h3 id="form-title">Adicionar Veículo</h3>
+                    <form id="vehicle-form-element">
+                        <input type="text" id="placa" placeholder="Placa" required>
+                        <input type="text" id="modelo" placeholder="Modelo" required>
+                        <input type="text" id="motor" placeholder="Motor">
+                        <textarea id="observacoes" placeholder="Observações"></textarea>
+                        <button type="submit">Salvar</button>
+                        <button type="button" id="cancel-btn">Cancelar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="message"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
